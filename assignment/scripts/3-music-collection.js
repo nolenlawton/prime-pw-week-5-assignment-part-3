@@ -16,6 +16,17 @@ function showCollection (array) {
      }
 }
 
+function findByArtist (artist = '') {
+    let arrayOfArtist = []
+    for (let record of collection) {
+        if (record.artist === artist) {
+            arrayOfArtist.push(record)  
+        }
+    }
+    console.log(arrayOfArtist)
+    return arrayOfArtist
+}
+
 addToCollection ('Good Kid, m.A.Ad city', 'Kendrick Lamar', 2012)
 addToCollection ('To Pimp a Butterfly.', 'Kendrick Lamar', 2015)
 addToCollection ('Beautiful Thugger Girls', 'Young Thug', 2017)
@@ -24,3 +35,6 @@ addToCollection ('Blonde', 'Frank Ocean', 2016)
 addToCollection ('Cozy Tapes Vol. 1', 'A$AP Mob', 2016)
 
 showCollection(collection)
+
+findByArtist('Kendrick Lamar')
+findByArtist('Elton John')
