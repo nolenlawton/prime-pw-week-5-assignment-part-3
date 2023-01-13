@@ -1,5 +1,3 @@
-console.log('***** Music Collection *****')
-
 let collection = [];
 
 function addToCollection (title, artist, yearPublished) {
@@ -11,7 +9,12 @@ function addToCollection (title, artist, yearPublished) {
     collection.push(record)
 }
 
-console.log(collection)
+function showCollection (array) {
+    console.log(array.length + ' Albums in Collection')
+     for (let i in array) {
+        console.log(array[i].title + ' by ' + array[i].artist + ', ' + array[i].yearPublished)
+     }
+}
 
 addToCollection ('Good Kid, m.A.Ad city', 'Kendrick Lamar', 2012)
 addToCollection ('To Pimp a Butterfly.', 'Kendrick Lamar', 2015)
@@ -20,5 +23,4 @@ addToCollection ('KOD', 'J. Cole', 2018)
 addToCollection ('Blonde', 'Frank Ocean', 2016)
 addToCollection ('Cozy Tapes Vol. 1', 'A$AP Mob', 2016)
 
-console.log(collection)
- 
+showCollection(collection)
