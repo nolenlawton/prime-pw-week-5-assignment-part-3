@@ -27,6 +27,24 @@ function findByArtist (artist = '') {
     return arrayOfArtist
 }
 
+function search (propertyToSearchFor) {
+    let arrayOfSearch = []
+
+    if(propertyToSearchFor === undefined || propertyToSearchFor === '') {
+        console.log(collection)
+        return collection
+    }
+
+    for (let record of collection) {
+        if (record.title === propertyToSearchFor ||record.artist === propertyToSearchFor || record.yearPublished === propertyToSearchFor) {
+            arrayOfSearch.push(record)  
+        }
+    }
+
+    console.log(arrayOfSearch)
+    return arrayOfSearch
+}
+
 addToCollection ('Good Kid, m.A.Ad city', 'Kendrick Lamar', 2012)
 addToCollection ('To Pimp a Butterfly.', 'Kendrick Lamar', 2015)
 addToCollection ('Beautiful Thugger Girls', 'Young Thug', 2017)
@@ -36,5 +54,11 @@ addToCollection ('Cozy Tapes Vol. 1', 'A$AP Mob', 2016)
 
 showCollection(collection)
 
-findByArtist('Kendrick Lamar')
-findByArtist('Elton John')
+findByArtist('Kendrick Lamar') // in collection
+findByArtist('Elton John') // not in collection
+
+search('KOD') // title in collection
+search('Young Thug') // artist in collection
+search(2016) // year in collection
+search('Elton John') // not in collection
+search() 
