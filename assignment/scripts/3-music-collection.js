@@ -18,26 +18,29 @@ function showCollection (array) {
 
 function findByArtist (artist = '') {
     let arrayOfArtist = []
+    console.log('Albums by ' + artist + ':')
+
     for (let record of collection) {
         if (record.artist === artist) {
             arrayOfArtist.push(record)  
         }
     }
+    
     console.log(arrayOfArtist)
     return arrayOfArtist
 }
 
 function search (propertyToSearchFor) {
     let arrayOfSearch = []
-
-    if(propertyToSearchFor === undefined || propertyToSearchFor === '') {
-        console.log(collection)
-        return collection
-    }
+    console.log('Search for ' + propertyToSearchFor + ':')
 
     for (let record of collection) {
         if (record.title === propertyToSearchFor ||record.artist === propertyToSearchFor || record.yearPublished === propertyToSearchFor) {
             arrayOfSearch.push(record)  
+        }
+        else if(propertyToSearchFor === undefined || propertyToSearchFor === '') {
+            console.log(collection)
+            return collection
         }
     }
 
@@ -61,4 +64,4 @@ search('KOD') // title in collection
 search('Young Thug') // artist in collection
 search(2016) // year in collection
 search('Elton John') // not in collection
-search() 
+search('')
